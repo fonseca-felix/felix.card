@@ -1,0 +1,440 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Trebuchet MS'
+    
+}
+
+header {
+    height: 100px;
+    background-color: #1C1C1C;
+    color: #fff;
+    text-align: center;
+    align-content: center;
+
+}
+
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 30px;
+    flex-wrap: wrap;
+    gap: 15px;
+    color: #fff;
+    background: linear-gradient(90deg, 
+    rgba(79,79,79,1) 0%, 
+    rgba(54,54,54,1) 24%, 
+    rgba(46,46,46,1) 43%, 
+    rgba(28,28,28,1) 66%, 
+    rgba(0,0,0,1) 83%);
+    background: linear-gradient(90deg, 
+    rgba(0,0,0,1) 0%,       
+    rgba(28,28,28,1) 24%,
+    rgba(255,0,0,1) 43%,    
+    rgba(28,28,28,1) 66%,   
+    rgba(0,0,0,1) 83%,      
+    rgba(0,0,0,1) 100%);    
+  background-size: 300% 100%; 
+  animation: moveGradient 6s linear infinite; 
+}
+.direita{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    
+}
+
+.esquerda{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 630px;
+    height: 500px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+    
+}
+
+.card:hover {
+    background-color: #636363;
+    transform: scale(1.03);
+}
+
+.card img {
+    width: 597px;
+    height: 221px;
+    object-fit: cover;
+}
+
+.card h2 {
+    margin: 15px 0px;
+}
+
+.card p {
+    font-size: 12px;
+
+}
+.ash {
+    width: 1150px;
+    height: 500px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+    display: flex;
+}
+
+.ash:hover {
+    background-color: #636363;
+    transform: scale(1.03);
+}
+
+.ash img {
+    width: 241px;
+    height: 413px;
+    object-fit: cover;
+}
+
+.ash h2 {
+    margin: 15px 0px;
+}
+
+.ash p {
+    font-size: 12px;
+    
+}
+.ashk {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+    max-width: 600px; 
+    height: 600px;
+    margin: 20px auto; 
+    text-align: center;
+    color: #fff;
+}
+
+.ashk img {
+    width: 150px; 
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.ashk p {
+    text-align: justify;
+    margin-bottom: 0px;
+    text-indent: 20px;
+}
+
+
+.ashk h2 {
+    margin: 15px 0px;
+}
+
+
+.eletric {
+    width: 160px;
+    height: 200px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+}
+
+.eletric:hover {
+    background-color: #F0E68C;
+    transform: scale(1.03);
+}
+
+.eletric img {
+    width: 120px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.eletric h2 {
+    margin: 15px 0px;
+}
+
+.eletric p {
+    font-size: 12px;
+
+}
+.bug {
+    width: 160px;
+    height: 200px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+}
+
+.bug:hover {
+    background-color: #6B8E23;
+    transform: scale(1.03);
+}
+
+.bug img {
+    width: 120px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.bug h2 {
+    margin: 15px 0px;
+}
+
+.bug p {
+    font-size: 12px;
+
+}
+.normal {
+    width: 160px;
+    height: 200px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+}
+
+.normal:hover {
+    background-color: #B0C4DE;
+    transform: scale(1.03);
+}
+
+.normal img {
+    width: 120px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.normal h2 {
+    margin: 15px 0px;
+}
+
+.normal p {
+    font-size: 12px;
+
+}
+.grass {
+    width: 160px;
+    height: 200px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+}
+
+.grass:hover {
+    background-color: #98FB98;
+    transform: scale(1.03);
+}
+
+.grass img {
+    width: 120px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.grass h2 {
+    margin: 15px 0px;
+}
+
+.grass p {
+    font-size: 12px;
+
+}
+.red {
+    width: 160px;
+    height: 200px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+}
+
+.red:hover {
+    background-color: #FF6347;
+    transform: scale(1.03);
+}
+
+.red img {
+    width: 120px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.red h2 {
+    margin: 15px 0px;
+}
+
+.red p {
+    font-size: 12px;
+
+}
+.water {
+    width: 160px;
+    height: 200px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+}
+
+.water:hover {
+    background-color: #87CEFA;
+    transform: scale(1.03);
+}
+
+.water img {
+    width: 120px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.water h2 {
+    margin: 15px 0px;
+}
+
+.water p {
+    font-size: 12px;
+
+}
+.poison {
+    width: 160px;
+    height: 200px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+}
+
+.poison:hover {
+    background-color: #BA55D3;
+    transform: scale(1.03);
+}
+
+.poison img {
+    width: 120px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.poison h2 {
+    margin: 15px 0px;
+}
+
+.poison p {
+    font-size: 12px;
+
+}
+.finghting {
+    width: 160px;
+    height: 200px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+}
+
+.finghting:hover {
+    background-color: #A52A2A;
+    transform: scale(1.03);
+}
+
+.finghting img {
+    width: 120px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.finghting h2 {
+    margin: 15px 0px;
+}
+
+.fighting p {
+    font-size: 12px;
+
+}
+.rock {
+    width: 160px;
+    height: 200px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    margin-bottom: 30px;
+    transition: transform 0.9s ease;
+}
+
+.rock:hover {
+    background-color: #FFDAB9;
+    transform: scale(1.07);
+}
+
+.rock img {
+    width: 120px;
+    height: 112px;
+    object-fit: cover;
+}
+
+.rock h2 {
+    margin: 15px 0px;
+}
+
+.rock p {
+    font-size: 12px;
+
+}
+
+
+@keyframes moveGradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 0%; 
+  }
+}
+footer {
+    height: 50px;
+    background-color: rgb(0, 0, 0);
+    color: #fff;
+    text-align: right;
+    align-content: center;
+    font-size: 16px;
+}
