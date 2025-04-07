@@ -1,0 +1,265 @@
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Trebuchet MS', sans-serif;
+    color: #fff;
+    background: #1C1C1C;
+}
+
+/* Header */
+header {
+    padding: 20px;
+    background-color: #1C1C1C;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #FF0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+    font-size: 14px;
+}
+
+.nav-button:hover {
+    background-color: #CC0000;
+}
+
+/* Main Content */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: linear-gradient(90deg, 
+        rgba(0,0,0,1) 0%,       
+        rgba(28,28,28,1) 24%,
+        rgba(255,0,0,1) 43%,    
+        rgba(28,28,28,1) 66%,   
+        rgba(0,0,0,1) 83%,      
+        rgba(0,0,0,1) 100%);
+    background-size: 300% 100%;
+    animation: moveGradient 6s linear infinite;
+}
+
+@keyframes moveGradient {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+}
+
+/* Layout Sections */
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+
+.direita, .esquerda {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Card Styles */
+.card {
+    width: 100%;
+    max-width: 600px;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: #333;
+}
+
+.card:hover {
+    background-color: #636363;
+    transform: scale(1.02);
+    color: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Ash Special Card */
+.ash {
+    width: 100%;
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    color: #333;
+}
+
+.ash:hover {
+    background-color: #636363;
+    transform: scale(1.02);
+    color: #fff;
+}
+
+.ash img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+.ashk {
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: rgba(28, 28, 28, 0.8);
+}
+
+.ashk img {
+    width: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.ashk p {
+    text-align: justify;
+    margin-bottom: 15px;
+    text-indent: 20px;
+    line-height: 1.5;
+}
+
+/* Type Cards */
+.type-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.eletric, .bug, .normal, .grass, .red, 
+.water, .poison, .finghting, .rock {
+    background-color: rgb(190, 204, 204);
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 3px 3px 5px #fff;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    color: #333;
+    text-align: center;
+}
+
+/* Type Card Images */
+.eletric img, .bug img, .normal img, 
+.grass img, .red img, .water img, 
+.poison img, .finghting img, .rock img {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto;
+}
+
+/* Type Card Hover Effects */
+.eletric:hover { background-color: #F0E68C; transform: scale(1.03); }
+.bug:hover { background-color: #6B8E23; transform: scale(1.03); color: #fff; }
+.normal:hover { background-color: #B0C4DE; transform: scale(1.03); }
+.grass:hover { background-color: #98FB98; transform: scale(1.03); }
+.red:hover { background-color: #FF6347; transform: scale(1.03); color: #fff; }
+.water:hover { background-color: #87CEFA; transform: scale(1.03); }
+.poison:hover { background-color: #BA55D3; transform: scale(1.03); color: #fff; }
+.finghting:hover { background-color: #A52A2A; transform: scale(1.03); color: #fff; }
+.rock:hover { background-color: #FFDAB9; transform: scale(1.03); }
+
+/* Common Text Styles */
+h1 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin: 15px 0;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+p {
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+/* Footer */
+footer {
+    padding: 15px;
+    background-color: rgb(0, 0, 0);
+    text-align: center;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+/* Media Queries */
+@media (min-width: 768px) {
+    .container {
+        flex-direction: row;
+        justify-content: center;
+    }
+    
+    .ash {
+        flex-direction: row;
+    }
+    
+    .ash .esquerda {
+        flex: 0 0 250px;
+    }
+    
+    .ash .direita {
+        flex: 1;
+    }
+    
+    .type-container {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    }
+}
+
+@media (min-width: 1024px) {
+    main {
+        padding: 30px;
+    }
+    
+    .card {
+        max-width: 630px;
+    }
+    
+    .ash {
+        max-width: 1150px;
+        margin: 0 auto;
+    }
+    
+    .ashk {
+        height: auto;
+    }
+}

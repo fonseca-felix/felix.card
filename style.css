@@ -1,3 +1,4 @@
+/* Reset e Estilos Globais */
 * {
     margin: 0;
     padding: 0;
@@ -8,21 +9,151 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    font-family: 'Trebuchet MS'
-    
+    font-family: 'Trebuchet MS', sans-serif;
 }
 
+/* Header */
 header {
-    height: 100px;
-    background-color: #1C1C1C;
+    height: 150px;
+    background: linear-gradient(90deg, 
+        rgba(0,0,0,1) 0%,
+        rgba(28,28,28,1) 24%,
+        rgba(255,0,0,1) 43%,
+        rgba(28,28,28,1) 66%,
+        rgba(0,0,0,1) 83%,
+        rgba(0,0,0,1) 100%);
+    background-size: 300% 100%;
+    animation: moveGradient 6s linear infinite;
     color: #fff;
     text-align: center;
-    align-content: center;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
+@keyframes moveGradient {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 0%; }
+}
 
+.nav-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #FF0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
 
+.nav-button:hover {
+    background-color: #CC0000;
+}
+
+/* Navegação de Tipos */
+.type-nav {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background-color: rgba(28, 28, 28, 0.8);
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 100;
+}
+
+.type-nav ul {
+    list-style: none;
+}
+
+.type-nav li {
+    margin: 5px 0;
+}
+
+.type-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.type-nav a:hover {
+    color: #FF0000;
+}
+
+.menu-toggle {
+    background-color: #1C1C1C;
+    color: white;
+    border: 2px solid #FF0000;
+    border-radius: 20px;
+    padding: 8px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.menu-toggle:hover {
+    background-color: #FF0000;
+}
+
+.type-menu {
+    display: none;
+    list-style: none;
+    background-color: rgba(28, 28, 28, 0.95);
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.type-nav:hover .type-menu {
+    display: block;
+}
+
+.type-menu li {
+    margin: 5px 0;
+}
+
+.type-menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.3s;
+    font-size: 14px;
+    text-align: center;
+}
+
+.type-menu a:hover {
+    transform: translateX(-5px);
+    font-weight: bold;
+    opacity: 0.9;
+}
+
+/* Cores de fundo para tipos */
+.all-bg { background-color: #333; }
+.grass-bg { background-color: #78C850; }
+.red-bg { background-color: #F08030; }
+.water-bg { background-color: #6890F0; }
+.bug-bg { background-color: #A8B820; }
+.normal-bg { background-color: #A8A878; }
+.poison-bg { background-color: #A040A0; }
+.eletric-bg { background-color: #F8D030; }
+.ground-bg { background-color: #E0C068; }
+.fairy-bg { background-color: #EE99AC; }
+.fighting-bg { background-color: #C03028; }
+.psychic-bg { background-color: #F85888; }
+.rock-bg { background-color: #B8A038; }
+.ghost-bg { background-color: #705898; }
+.dragon-bg { background-color: #7038F8; }
+.ice-bg { background-color: #98D8D8; }
+
+/* Conteúdo Principal */
 main {
     flex: 1;
     display: flex;
@@ -31,97 +162,13 @@ main {
     padding: 30px;
     flex-wrap: wrap;
     gap: 15px;
-    background: linear-gradient(90deg, 
-    rgba(79,79,79,1) 0%, 
-    rgba(54,54,54,1) 24%, 
-    rgba(46,46,46,1) 43%, 
-    rgba(28,28,28,1) 66%, 
-    rgba(0,0,0,1) 83%);
-    background: linear-gradient(90deg, 
-    rgba(0,0,0,1) 0%,       /* Preto */
-    rgba(28,28,28,1) 24%,   /* Cinza Escuro - #1C1C1C */
-    rgba(255,0,0,1) 43%,    /* Vermelho */
-    rgba(28,28,28,1) 66%,   /* Cinza Escuro - #1C1C1C */
-    rgba(0,0,0,1) 83%,      /* Preto */
-    rgba(0,0,0,1) 100%);    /* Preto */
-  background-size: 300% 100%; /* Define o tamanho inicial do gradiente */
-  animation: moveGradient 6s linear infinite; /* Aplica a animação */
+    background-color: #1C1C1C;
 }
 
-/* Define a animação que faz o gradiente se mover */
-@keyframes moveGradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  100% {
-    background-position: 100% 0%; /* Movimento do gradiente de 0% a 100% */
-  }
-}
-
-
-.poke {
-    width: 340px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.3s ease;
-}
-
-.poke:hover {
-    background-color: #B0E0E6;
-    transform: scale(1.07);
-}
-
-.poke img {
-    width: 308px;
-    height: 163px;
-    object-fit: cover;
-}
-
-.poke h2 {
-    margin: 15px 0px;
-}
-
-.poke p {
-    font-size: 12px;
-
-}
-
-.card {
-    width: 360px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.card:hover {
-    background-color: #98FB98;
-    transform: scale(1.07);
-}
-
-.card img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.card h2 {
-    margin: 15px 0px;
-}
-
-.card p {
-    font-size: 12px;
-
-}
-
-.red {
+/* Estilos de Cards Genéricos */
+.card, .poke, .red, .grass, .water, .bug, .normal, .poison, 
+.eletric, .ground, .fairy, .fighting, .psychic, .rock, 
+.ghost, .dragon, .ice {
     width: 300px;
     height: 500px;
     background-color: rgb(190, 204, 204);
@@ -129,481 +176,87 @@ main {
     border-radius: 15px;
     box-shadow: 3px 3px 5px #fff;
     margin-bottom: 30px;
-    transition: transform 0.9s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.red:hover {
-    background-color: #FF6347;
-    transform: scale(1.07);
-}
-
-.red img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.red h2 {
-    margin: 15px 0px;
-}
-
-.red p {
-    font-size: 12px;
-
-}
-
-.grass {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.grass:hover {
-    background-color: #98FB98;
-    transform: scale(1.07);
-}
-
-.grass img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.grass h2 {
-    margin: 15px 0px;
-}
-
-.grass p {
-    font-size: 12px;
-
-}
-.water {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.water:hover {
-    background-color: #87CEFA;
-    transform: scale(1.07);
-}
-
-.water img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.water h2 {
-    margin: 15px 0px;
-}
-
-.water p {
-    font-size: 12px;
-
-}
-
-.bug {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.bug:hover {
-    background-color: #6B8E23;
-    transform: scale(1.07);
-}
-
-.bug img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.bug h2 {
-    margin: 15px 0px;
-}
-
-.bug p {
-    font-size: 12px;
-
-}
-
-.normal {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.normal:hover {
-    background-color: #B0C4DE;
-    transform: scale(1.07);
-}
-
-.normal img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.normal h2 {
-    margin: 15px 0px;
-}
-
-.normal p {
-    font-size: 12px;
-
-}
-
-.poison {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.poison:hover {
-    background-color: #BA55D3;
-    transform: scale(1.07);
-}
-
-.poison img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.poison h2 {
-    margin: 15px 0px;
-}
-
-.poison p {
-    font-size: 12px;
-
-}
-
-.eletric {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.eletric:hover {
-    background-color: #F0E68C;
-    transform: scale(1.07);
-}
-
-.eletric img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.eletric h2 {
-    margin: 15px 0px;
-}
-
-.eletric p {
-    font-size: 12px;
-
-}
-
-.ground {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.ground:hover {
-    background-color: #FFE4C4;
-    transform: scale(1.07);
-}
-
-.ground img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.ground h2 {
-    margin: 15px 0px;
-}
-
-.ground p {
-    font-size: 12px;
-
-}
-
-.fairy {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.fairy:hover {
-    background-color: #FF69B4;
-    transform: scale(1.07);
-}
-
-.fairy img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.fairy h2 {
-    margin: 15px 0px;
-}
-
-.fairy p {
-    font-size: 12px;
-
-}
-
-.finghting {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.finghting:hover {
-    background-color: #A52A2A;
-    transform: scale(1.07);
-}
-
-.finghting img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.finghting h2 {
-    margin: 15px 0px;
-}
-
-.fighting p {
-    font-size: 12px;
-
-}
-
-.psychic {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.psychic:hover {
-    background-color: #C71585;
-    transform: scale(1.07);
-}
-
-.psychic img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.psychic h2 {
-    margin: 15px 0px;
-}
-
-.psychic p {
-    font-size: 12px;
-
-}
-
-.rock {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.rock:hover {
-    background-color: #FFDAB9;
-    transform: scale(1.07);
-}
-
-.rock img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.rock h2 {
-    margin: 15px 0px;
-}
-
-.rock p {
-    font-size: 12px;
-
-}
-
-.ghost {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.ghost:hover {
-    background-color: #D8BFD8;
-    transform: scale(1.07);
-}
-
-.ghost img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.ghost h2 {
-    margin: 15px 0px;
-}
-
-.ghost p {
-    font-size: 12px;
-
-}
-
-.dragon {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.dragon:hover {
-    background-color: #7B68EE;
-    transform: scale(1.07);
-}
-
-.dragon img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
-}
-
-.dragon h2 {
-    margin: 15px 0px;
-}
-
-.dragon p {
-    font-size: 12px;
-
-}
-
-.ice {
-    width: 300px;
-    height: 500px;
-    background-color: rgb(190, 204, 204);
-    padding: 15px;
-    border-radius: 15px;
-    box-shadow: 3px 3px 5px #fff;
-    margin-bottom: 30px;
-    transition: transform 0.9s ease;
-}
-
-.ice:hover {
-    background-color: #F0F8FF;
-    transform: scale(1.07);
-}
-
+.card img, .poke img, .red img, .grass img, .water img, .bug img, 
+.normal img, .poison img, .eletric img, .ground img, .fairy img, 
+.fighting img, .psychic img, .rock img, .ghost img, .dragon img, 
 .ice img {
     width: 270px;
     height: 270px;
     object-fit: cover;
 }
 
+.card h2, .poke h2, .red h2, .grass h2, .water h2, .bug h2, 
+.normal h2, .poison h2, .eletric h2, .ground h2, .fairy h2, 
+.fighting h2, .psychic h2, .rock h2, .ghost h2, .dragon h2, 
 .ice h2 {
-    margin: 15px 0px;
+    margin: 15px 0;
 }
 
+.card p, .poke p, .red p, .grass p, .water p, .bug p, 
+.normal p, .poison p, .eletric p, .ground p, .fairy p, 
+.fighting p, .psychic p, .rock p, .ghost p, .dragon p, 
 .ice p {
     font-size: 12px;
-
-}
-.card img {
-    width: 270px;
-    height: 270px;
-    object-fit: cover;
 }
 
-.card h2 {
-    margin: 15px 0px;
-}
+/* Efeitos hover específicos para cada tipo */
+.poke:hover { background-color: #B0E0E6; transform: scale(1.07); }
+.card:hover { background-color: #98FB98; transform: scale(1.07); }
+.red:hover { background-color: #FF6347; transform: scale(1.07); }
+.grass:hover { background-color: #98FB98; transform: scale(1.07); }
+.water:hover { background-color: #87CEFA; transform: scale(1.07); }
+.bug:hover { background-color: #6B8E23; transform: scale(1.07); }
+.normal:hover { background-color: #B0C4DE; transform: scale(1.07); }
+.poison:hover { background-color: #BA55D3; transform: scale(1.07); }
+.eletric:hover { background-color: #F0E68C; transform: scale(1.07); }
+.ground:hover { background-color: #FFE4C4; transform: scale(1.07); }
+.fairy:hover { background-color: #FF69B4; transform: scale(1.07); }
+.fighting:hover { background-color: #A52A2A; transform: scale(1.07); }
+.psychic:hover { background-color: #C71585; transform: scale(1.07); }
+.rock:hover { background-color: #FFDAB9; transform: scale(1.07); }
+.ghost:hover { background-color: #D8BFD8; transform: scale(1.07); }
+.dragon:hover { background-color: #7B68EE; transform: scale(1.07); }
+.ice:hover { background-color: #F0F8FF; transform: scale(1.07); }
 
-.card p {
-    font-size: 12px;
-
-}
-
+/* Footer */
 footer {
     height: 50px;
     background-color: rgb(0, 0, 0);
     color: #fff;
     text-align: right;
-    align-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 20px;
     font-size: 16px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .type-nav {
+        position: static;
+        margin: 10px auto;
+        width: 90%;
+        transform: none;
+    }
+    
+    .type-menu {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+    
+    .menu-toggle {
+        display: none;
+    }
+
+    .card, .poke, .red, .grass, .water, .bug, .normal, .poison, 
+    .eletric, .ground, .fairy, .fighting, .psychic, .rock, 
+    .ghost, .dragon, .ice {
+        width: 100%;
+        max-width: 340px;
+    }
 }

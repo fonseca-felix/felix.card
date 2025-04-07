@@ -3,7 +3,32 @@
     padding: 0;
     box-sizing: border-box;
 }
+header {
+    height: 150px; 
+    background-color: #1C1C1C;
+    color: #fff;
+    text-align: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
 
+.nav-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #FF0000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #CC0000;
+}
 body {
     height: 100vh;
     display: flex;

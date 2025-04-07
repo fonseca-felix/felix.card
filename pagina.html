@@ -1,17 +1,39 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <title>Pokédex do f3l1z</title>
     <link rel="shortcut icon" href="icon.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    
 </head>
-
 <body>
     <header>
         <h1>Pokédex Kanto</h1>
+        <nav>
+            <a href="index.html" class="nav-button">Voltar ao Início</a>
+            <a href="ash.html" class="nav-button">Ver Jornada do Ash</a>
+        </nav>
+        <nav class="type-nav">
+            <button class="menu-toggle">Tipos ▼</button>
+            <ul class="type-menu">
+                <li><a href="#all" class="all-bg">Todos Pokémon</a></li>
+                <li><a href="#grass" class="grass-bg">Grama</a></li>
+                <li><a href="#red" class="red-bg">Fogo</a></li>
+                <li><a href="#water" class="water-bg">Água</a></li>
+                <li><a href="#bug" class="bug-bg">Inseto</a></li>
+                <li><a href="#normal" class="normal-bg">Normal</a></li>
+                <li><a href="#poison" class="poison-bg">Venenoso</a></li>
+                <li><a href="#eletric" class="eletric-bg">Elétrico</a></li>
+                <li><a href="#ground" class="ground-bg">Terrestre</a></li>
+                <li><a href="#fairy" class="fairy-bg">Fada</a></li>
+                <li><a href="#fighting" class="fighting-bg">Lutador</a></li>
+                <li><a href="#psychic" class="psychic-bg">Psíquico</a></li>
+                <li><a href="#rock" class="rock-bg">Pedra</a></li>
+                <li><a href="#ghost" class="ghost-bg">Fantasma</a></li>
+                <li><a href="#dragon" class="dragon-bg">Dragão</a></li>
+                <li><a href="#ice" class="ice-bg">Gelo</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
       
@@ -408,13 +430,13 @@
                 poderes psíquicos</p>
         </div>
 
-        <div class="finghting">
+        <div class="fighting">
             <img src="imgs/mankey1.avif">
             <h2>Mankey</h2>
             <p> Extremamente temperamental. Se provocado, não para de atacar até se acalmar, o que pode levar horas</p>
         </div>
 
-        <div class="finghting">
+        <div class="fighting">
             <img src="imgs/primeape1.avif">
             <h2>Primeape</h2>
             <p>Um lutador furioso que nunca esquece uma ofensa. Sua fúria o torna ainda mais rápido e poderoso</p>
@@ -475,21 +497,21 @@
                 amplificar seus poderes psíquicos</p>
         </div>
 
-        <div class="finghting">
+        <div class="fighting">
             <img src="imgs/machop1.avif">
             <h2>Machop</h2>
             <p>Seu corpo pequeno esconde músculos densos e poderosos. Pode levantar objetos 10 vezes mais pesados que
                 ele próprio</p>
         </div>
 
-        <div class="finghting">
+        <div class="fighting">
             <img src="imgs/machoke1.avif">
             <h2>Machoke</h2>
             <p>Seus músculos são tão grandes que usa um cinto especial para controlar sua força. Ajuda na construção de
                 prédios por sua resistência</p>
         </div>
 
-        <div class="finghting">
+        <div class="fighting">
             <img src="imgs/machamp1.avif">
             <h2>Machamp</h2>
             <p>Com quatro braços, pode dar socos em alta velocidade. Seu corpo é tão poderoso que precisa de
@@ -736,13 +758,13 @@
             <p>Superou sua dor e se tornou um guerreiro forte. Usa seu osso como arma letal</p>
         </div>
 
-        <div class="finghting">
+        <div class="fighting">
             <img src="imgs/hitmonlee1.avif">
             <h2>Hitmonlee</h2>
             <p>Seus chutes são extremamente poderosos. Suas pernas podem se esticar para alcançar inimigos distantes</p>
         </div>
 
-        <div class="finghting">
+        <div class="fighting">
             <img src="imgs/hitmonchan1.avif">
             <h2>Hitmonchan</h2>
             <p> Suas mãos se movem mais rápido que o olho humano. Seus socos podem queimar ou congelar o inimigo</p>
@@ -1027,11 +1049,57 @@
             <h2>Mew</h2>
             <p>Um Pokémon misterioso e extremamente raro. Dizem que possui o DNA de todos os Pokémon, tornando-se a origem da vida Pokémon. Pode aprender qualquer golpe e é conhecido por sua natureza brincalhona</p>
         </div>
-
     </main>
     <footer>
         <p>Feito por feliz:)ハッピー</p>
     </footer>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    // Corrige a classe dos Pokémon Lutador
+    document.querySelectorAll('.finghting').forEach(el => {
+        el.classList.remove('finghting');
+        el.classList.add('fighting');
+    });
+
+    // Sistema de filtros
+    const typeLinks = document.querySelectorAll('.type-menu a');
+    let currentFilter = null;
+
+    typeLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const type = this.getAttribute('href').replace('#', '');
+            
+            if (type === 'all') {
+                clearFilter();
+                currentFilter = null;
+            } else if (currentFilter === type) {
+                clearFilter();
+                currentFilter = null;
+            } else {
+                filterPokemonByType(type);
+                currentFilter = type;
+            }
+        });
+    });
+
+    function filterPokemonByType(type) {
+        const allPokemon = document.querySelectorAll('.poke, .card, .grass, .red, .water, .bug, .normal, .poison, .eletric, .ground, .fairy, .fighting, .psychic, .rock, .ghost, .dragon, .ice');
+        
+        allPokemon.forEach(pokemon => {
+            pokemon.style.display = pokemon.classList.contains(type) ? 'block' : 'none';
+        });
+    }
+
+    function clearFilter() {
+        const allPokemon = document.querySelectorAll('.poke, .card, .grass, .red, .water, .bug, .normal, .poison, .eletric, .ground, .fairy, .fighting, .psychic, .rock, .ghost, .dragon, .ice');
+        
+        allPokemon.forEach(pokemon => {
+            pokemon.style.display = 'block';
+        });
+    }
+});
+    </script>
 </body>
 
 </html>
